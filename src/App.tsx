@@ -1,14 +1,19 @@
-import { useState } from 'react'
 import './App.css'
+import { useState } from 'react'
 import { ThemeProvider } from "@/components/theme-provider"
-import {ModeToggle} from "@/components/mode-toggle"
+import { Header } from '@/components/header'
+import { Layout } from '@/components/layout'
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
-      <ModeToggle/>
+      <Layout>
+        <Header/>
+          <div className='h-[5000px]'>
+          </div>
+        </Layout>
     </ThemeProvider>
   )
 }
