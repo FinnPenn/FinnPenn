@@ -9,7 +9,7 @@ interface LayoutProps {
 export function Layout({ children }: LayoutProps) {
   return (
     <main className="p-8 min-h-screen bg-muted/40">
-        <div className="rounded-3xl min-h-screen bg-card text-card-foreground shadow-sm border p-6">
+        <div className="rounded-3xl bg-card text-card-foreground shadow-sm border p-6">
             {children}
         </div>
     </main>
