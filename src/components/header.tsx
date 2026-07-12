@@ -30,20 +30,22 @@ export function Header() {
 
 	return (
 			<header className={cn(
-				"sticky top-8 w-full z-50 border-border border-b md:transition-all md:ease-out",
+				"sticky top-8 w-full z-50 border-border border-b md:transition-all md:ease-out md:duration-700",
 				{
 					"mx-auto border-border bg-background/90 backdrop-blur-sm md:max-w-3xl md:shadow rounded-2xl":
 					scrolled,
 				}
 			)}>
-				<nav className="flex h-16 w-full items-center justify-between px-8 md:h-20 md:transition-all md:ease-out">
-					
+				<nav className="flex h-16 w-full items-center justify-between px-8 md:h-20 md:transition-all md:ease-out md:duration-700">
+					<div className="min-w-40">
 						<Avatar size="lg">
 		 					<AvatarImage src="https://github.com/FinnPenn.png" />
 							<AvatarFallback>FINNPENN_Avatar</AvatarFallback>
-							<AvatarBadge className="bg-green-600 dark:bg-green-800" />
+							<div className="absolute -right-2 -bottom-2 z-10 inline-flex items-center justify-center rounded-full bg-primary text-primary-foreground bg-blend-color ring-2 ring-background select-none">
+								<ModeToggle/>
+							</div>
 						</Avatar>
-					
+					</div>
 					<div>
 						{navLinks.map((link) => (
 							<Button key={link.label} size="sm" variant={link.label === 'References' ? 'default' : 'ghost'} render={<a href={link.href} />} nativeButton={false}>
@@ -51,7 +53,7 @@ export function Header() {
 							</Button>
 						))}
 					</div>
-					<div className="fill-foreground space-x-4">
+					<div className="fill-foreground flex justify-end gap-x-4 min-w-40">
 						<Button size="lg" variant="ghost" nativeButton={false}>
 							<svg className="size-7" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
 								<title>GitHub</title>

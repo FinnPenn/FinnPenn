@@ -1,6 +1,4 @@
 import React from "react"
-// Import your navigation or theme toggles here if you have them
-import { ModeToggle } from "./mode-toggle" 
 
 interface LayoutProps {
   children: React.ReactNode
