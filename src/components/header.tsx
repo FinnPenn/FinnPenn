@@ -2,8 +2,8 @@
 import { cn } from "@/lib/utils";
 import { useScroll } from "@/hooks/use-scroll";
 import { Button } from "@/components/ui/button";
-import { MobileNav } from "@/components/mobile-nav";
-import {ModeToggle} from "@/components/mode-toggle";
+import { MobileNav } from "@/components/nav/mobile-nav";
+import {ModeToggle} from "@/components/nav/mode-toggle";
 import { Avatar, AvatarBadge, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 
 export const navLinks = [
