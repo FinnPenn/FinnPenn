@@ -5,7 +5,15 @@
 @import "@fontsource-variable/inter";
 @import "lenis/dist/lenis.css";
 
+@font-face {
+  font-family: "Outfit";
+  src: local("Outfit"),
+    url("./fonts/Outfit.ttf") format("truetype");
+}
 
+body {
+  font-family: 'Outfit';
+}
 
 @custom-variant dark (&:is(.dark *));
 
