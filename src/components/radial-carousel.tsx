@@ -5,6 +5,7 @@ import * as React from 'react'
 import { motion } from 'motion/react'
 
 import { Carousel, CarouselNext, CarouselPrevious } from '@/components/ui/carousel'
+import { Button } from './ui/button'
 
 const Images = [
   {
@@ -67,7 +68,7 @@ const RadialCarousel = () => {
 
   return (
     <Carousel className='flex w-full flex-col items-center gap-8 py-8 select-none'>
-      <div className='relative h-120 w-full'>
+      <div className='flex relative h-120 w-full justify-center'>
         {Images.map((slide, i) => {
           // Shortest signed offset around the loop
           const raw = (i - active + total) % total
@@ -77,8 +78,8 @@ const RadialCarousel = () => {
           return (
             <motion.div
               key={i}
-              className='absolute top-0 left-1/2 cursor-pointer'
-              style={{ width: 723, height: 434, marginLeft: -400, zIndex }}
+              className='absolute top-0 cursor-pointer'
+              style={{ width: 723, height: 434, zIndex }}
               animate={{ x, rotateY, scale, opacity }}
               transition={SPRING}
               onClick={() => setActive(i)}
@@ -86,20 +87,27 @@ const RadialCarousel = () => {
             >
               <div className='relative size-full overflow-hidden shadow-lg'>
                 {/* Image */}
-                <img src={slide.image} alt={slide.title} className='size-full object-cover' draggable={false} />
+                <img src={slide.image} alt={slide.title} className='size-full object-cover grayscale' draggable={false} />
 
-                
+                {/* Gradient veil  */}
+                <div className='bg-radial from-black/70 from-40% to-black/20 absolute top-0 left-0 size-full' />
+               
 
                 {/* Active-only label - Images in from below on focus */}
                 <motion.div
-                  className='absolute inset-x-0 bottom-0 w-full h-full flex justify-center items-center'
+                  className='absolute inset-x-0 bottom-0 w-full h-full flex flex-col justify-center items-center'
                   animate={{ opacity: offset === 0 ? 1 : 0, y: offset === 0 ? 0 : 12 }}
                   transition={{ duration: 0.28 }}
                 >
                   {/* <span className='text-primary-foreground text-[96px] font-medium uppercase'>
                     {slide.category}
                   </span> */}
-                  <p className='text-bigger text-[#E6CDF9] text-[96px] font-medium uppercase text-shadow-[4px_4px_4px_0px_rgba(0,0,0,0.25)]'>{slide.title}</p>
+                  <a href="#">
+                  <div className='font-heading text-foreground text-[96px] font-medium uppercase text-shadow-xl leading-none group'>
+                    {slide.title}
+                    <div className="bg-foreground h-2 w-0 group-hover:w-full transition-all duration-500"></div>
+                  </div>
+                  </a>
                 </motion.div>
 
                 {/* Active ring */}
@@ -115,8 +123,8 @@ const RadialCarousel = () => {
       </div>
 
       <div className='flex items-end gap-3'>
-        <CarouselPrevious className='static top-auto left-auto translate-y-0' onClick={() => go(-1)} disabled={false} />
-        <CarouselNext className='static top-auto right-auto translate-y-0' onClick={() => go(1)} disabled={false} />
+        <CarouselPrevious size={'lg'} className='static top-auto left-auto translate-y-0 cursor-pointer' onClick={() => go(-1)} disabled={false} />
+        <CarouselNext size={'lg'} className='static top-auto right-auto translate-y-0 cursor-pointer' onClick={() => go(1)} disabled={false} />
       </div>
     </Carousel>
   )

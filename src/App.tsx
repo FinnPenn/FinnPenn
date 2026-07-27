@@ -30,7 +30,8 @@ function App() {
     //   </ThemeProvider>
     // </ReactLenis>
     <ReactLenis root >
-      <div className='w-full h-screen relative bg-[#120F17]'>
+      <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
+      <div className='w-full h-screen relative bg-background'>
         <GradientBlinds
           className='blur-3xl'
           gradientColors={["#F349D4","#6230bb"]}
@@ -54,31 +55,32 @@ function App() {
           </div>
         </div>
       </div>
-      <div className='flex w-full justify-center bg-[#120F17] py-80'>
+      <div className='flex w-full justify-center bg-background py-80'>
         <div className='relative h-min'>
-          <div className='z-10 relative font-bold text-[130px] tracking-[-5%] leading-[106%] text-center text-[#D8BFD8]'>
+          <div className='z-10 relative font-bold text-[130px] tracking-[-5%] leading-[106%] text-center text-foreground'>
             Follow me on my <br/> journey as I <br/> advance my skills.
           </div>
-          <span className='z-20 absolute left-32 -top-8 uppercase px-8 py-5 bg-[#F36DDC] font-black tracking-[8%] text-[20px] transform -rotate-10 shadow-[4px_4px_4px_0px_rgba(0,0,0,0.25)]'>Materials</span>
-          <span className='z-20 absolute right-20 top-29  uppercase px-8 py-5 bg-[#F36DDC] font-black tracking-[8%] text-[20px] transform -rotate-10 shadow-[4px_4px_4px_0px_rgba(0,0,0,0.25)]'>3D-modeling</span>
-          <span className='z-20 absolute top-97 -right-10 uppercase px-8 py-5 bg-[#F36DDC] font-black tracking-[8%] text-[20px] transform -rotate-10 shadow-[4px_4px_4px_0px_rgba(0,0,0,0.25)]'>Frontend</span>
-          <span className='z-0 absolute top-96 left-32 uppercase px-8 py-5 bg-[#F36DDC] font-black tracking-[8%] text-[20px] transform rotate-10 shadow-[4px_4px_4px_0px_rgba(0,0,0,0.25)]'>Stories</span>
+          <span className='text-background z-20 absolute left-32 -top-8 uppercase px-8 py-5 bg-primary font-black tracking-[8%] text-[20px] transform -rotate-10 shadow-[4px_4px_4px_0px_rgba(0,0,0,0.25)]'>Materials</span>
+          <span className='text-background z-20 absolute right-20 top-29  uppercase px-8 py-5 bg-primary font-black tracking-[8%] text-[20px] transform -rotate-10 shadow-[4px_4px_4px_0px_rgba(0,0,0,0.25)]'>3D-modeling</span>
+          <span className='text-background z-20 absolute top-97 -right-10 uppercase px-8 py-5 bg-primary font-black tracking-[8%] text-[20px] transform -rotate-10 shadow-[4px_4px_4px_0px_rgba(0,0,0,0.25)]'>Frontend</span>
+          <span className='text-background z-0 absolute top-96 left-32 uppercase px-8 py-5 bg-primary font-black tracking-[8%] text-[20px] transform rotate-10 shadow-[4px_4px_4px_0px_rgba(0,0,0,0.25)]'>Stories</span>
         </div>
       </div>
-      <div className='bg-[#18141F] py-40'>
+      <div className='bg-card py-40'>
       <RadialCarousel/>
       </div>
-      <div className='py-20 px-27 flex flex-col gap-y-8 text-[#EACFF7] bg-[#120F17]'>
+      <div className='py-20 px-27 flex flex-col gap-y-8 text-foreground bg-background'>
         <a className='flex' href='#'>
-          <span className='uppercase text-bigger text-[128px]'>Photo Media</span>
+          <span className='uppercase font-heading text-[128px]'>Photo Media</span>
           <ArrowUpRight size={128}/>
         </a>
         <a className='flex' href='#'>
-          <span className='uppercase text-bigger text-[128px]'>Fernhaven Games</span>
+          <span className='uppercase font-heading text-[128px]'>Fernhaven Games</span>
           <ArrowUpRight size={128}/>
         </a> 
       </div>
       <Footer/>
+      </ThemeProvider>
     </ReactLenis>
   )
 }
