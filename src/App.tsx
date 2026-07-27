@@ -7,6 +7,9 @@ import { AssetDeck } from './components/asset-deck'
 import  { ReactLenis, useLenis } from 'lenis/react'
 import VideoScrollPage from './components/experimental/video-scroll-page'
 import GradientBlinds from './components/GradientBlinds'
+import RadialCarousel from './components/radial-carousel'
+import { ArrowUpRight } from 'lucide-react'
+import Footer from './components/footer'
 
 function App() {
    const lenis = useLenis((lenis) => {
@@ -62,6 +65,20 @@ function App() {
           <span className='z-0 absolute top-96 left-32 uppercase px-8 py-5 bg-[#F36DDC] font-black tracking-[8%] text-[20px] transform rotate-10 shadow-[4px_4px_4px_0px_rgba(0,0,0,0.25)]'>Stories</span>
         </div>
       </div>
+      <div className='bg-[#18141F] py-40'>
+      <RadialCarousel/>
+      </div>
+      <div className='py-20 px-27 flex flex-col gap-y-8 text-[#EACFF7] bg-[#120F17]'>
+        <a className='flex' href='#'>
+          <span className='uppercase text-bigger text-[128px]'>Photo Media</span>
+          <ArrowUpRight size={128}/>
+        </a>
+        <a className='flex' href='#'>
+          <span className='uppercase text-bigger text-[128px]'>Fernhaven Games</span>
+          <ArrowUpRight size={128}/>
+        </a> 
+      </div>
+      <Footer/>
     </ReactLenis>
   )
 }

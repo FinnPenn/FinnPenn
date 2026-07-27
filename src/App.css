@@ -11,6 +11,16 @@
     url("./fonts/Outfit.ttf") format("truetype");
 }
 
+@font-face {
+  font-family: "Bigger";
+  src: local("Bigger"),
+    url("./fonts/Bigger.otf") format("opentype");
+}
+
+.text-bigger {
+  font-family: 'Bigger';
+}
+
 body {
   font-family: 'Outfit';
 }
