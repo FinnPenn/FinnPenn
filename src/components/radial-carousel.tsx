@@ -11,22 +11,22 @@ const Images = [
   {
     image: 'https://cdn.shadcnstudio.com/ss-assets/blocks/marketing/gallery/image-42.png',
     title: 'Materials',
-    category: 'Nature'
+    link: '/materials'
   },
   {
     image: 'https://cdn.shadcnstudio.com/ss-assets/blocks/marketing/gallery/image-41.png',
     title: '3D-Modeling',
-    category: 'Seascape'
+    link: '/modeling'
   },
   {
     image: 'https://cdn.shadcnstudio.com/ss-assets/blocks/marketing/gallery/image-40.png',
     title: 'Frontend',
-    category: 'Woodland'
+    link: '/frontend'
   },
   {
     image: 'https://cdn.shadcnstudio.com/ss-assets/blocks/marketing/gallery/image-39.png',
     title: 'Stories',
-    category: 'Landscape'
+    link: '/stories'
   }
 ]
 
@@ -102,7 +102,7 @@ const RadialCarousel = () => {
                   {/* <span className='text-primary-foreground text-[96px] font-medium uppercase'>
                     {slide.category}
                   </span> */}
-                  <a href="#">
+                  <a href={slide.link}>
                   <div className='font-heading text-foreground text-[96px] font-medium uppercase text-shadow-xl leading-none group'>
                     {slide.title}
                     <div className="bg-foreground h-2 w-0 group-hover:w-full transition-all duration-500"></div>
