@@ -12,12 +12,7 @@ function App() {
     <ReactLenis root >
       <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
       <BrowserRouter>
-            {/* Navigation Links */}
-            <nav style={{ display: 'flex', gap: '1rem', padding: '1rem', background: '#eee' }}>
-              <Link to="/">Home</Link>
-              <Link to="/materials">About</Link>
-            </nav>
-
+          
             {/* Route Switcher */}
             <Routes>
               <Route path="/" element={<Index />} />

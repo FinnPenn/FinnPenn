@@ -7,13 +7,13 @@ import Projects from '@/components/sections/projects'
 
 export const Index: React.FC = () => {
     return(
-        <div>
+        <main>
             <Hero/>
-            <div className='bg-card py-40'>
+            <section id="carousel" className='bg-card py-40'>
                 <RadialCarousel/>
-            </div>
+            </section>
             <Projects/>
             <Footer/>
-      </div>
+        </main>
     )
 }

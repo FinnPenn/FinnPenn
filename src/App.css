@@ -5,6 +5,10 @@
 @import "@fontsource-variable/inter";
 @import "lenis/dist/lenis.css";
 
+body {
+  position: relative;
+}
+
 @font-face {
   font-family: "Outfit";
   src: local("Outfit"),
@@ -68,7 +72,7 @@
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);
   --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
+  --card-foreground: oklch(0.2072 0.0387 313.87);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.145 0 0);
   --primary: oklch(0.205 0 0);
