@@ -2,9 +2,10 @@ import './App.css'
 import { useState } from 'react'
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import { Index } from './pages/Index';
-import { Materials } from './pages/Materials';
+import { ReferencesPage } from './pages/References';
 import { ThemeProvider } from "@/components/nav/theme-provider"
 import  { ReactLenis, useLenis } from 'lenis/react'
+
 
 
 function App() {
@@ -16,7 +17,7 @@ function App() {
             {/* Route Switcher */}
             <Routes>
               <Route path="/" element={<Index />} />
-              <Route path="/materials" element={<Materials />} />
+              <Route path="/:References" element={<ReferencesPage />} />
             </Routes>
           </BrowserRouter>
       </ThemeProvider>
