@@ -12,7 +12,16 @@ import { ArticleList } from './components/article-list';
 function App() {
    return (
     <ReactLenis root >
-      <ArticleList/>
+       <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
+      <BrowserRouter>
+          
+            {/* Route Switcher */}
+            <Routes>
+              <Route path="/" element={<Index />} />
+              <Route path="/:References" element={<ReferencesPage />} />
+            </Routes>
+          </BrowserRouter>
+      </ThemeProvider>
     </ReactLenis>
   )
 }
