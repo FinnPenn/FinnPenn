@@ -21,10 +21,7 @@ const Menu = () => {
   return (
     <Drawer swipeDirection="right">
             <DrawerTrigger className={'absolute right-16 top-16 z-50 size-25 flex flex-col items-center justify-center gap-2 cursor-pointer'} render={<Button className={'hover:bg-transparent!'} variant="ghost" />}>
-                {/* Top bar -> becomes diagonal line \ */}
                 <div className="h-2.5 w-11 bg-foreground "></div>
-
-                {/* Bottom bar -> becomes diagonal line / */}
                 <div className="h-2.5 w-11 bg-foreground "></div>
             </DrawerTrigger>
             <DrawerContent className={'w-1/4 rounded-none! bg-card-foreground p-16'}>
