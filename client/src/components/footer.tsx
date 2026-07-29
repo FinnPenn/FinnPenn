@@ -6,6 +6,9 @@ interface FooterProps {
 }
 
 const Footer = ({ className }: FooterProps) => {
+  const strapiUrl = import.meta.env.VITE_STRAPI_URL || 'http://localhost:1337';
+  const adminUrl = `${strapiUrl}/admin`;
+
   return (
     <div
       className={cn(
@@ -20,9 +23,20 @@ const Footer = ({ className }: FooterProps) => {
         <span>-</span>
         <span>2K26</span>
       </div>
-      <div className="flex">
-        <span>Contact</span>
-        <ArrowUpRight size={20} strokeWidth={1} />
+      <div className="flex gap-x-4">
+        <div className="flex">
+          <span>Contact</span>
+          <ArrowUpRight size={20} strokeWidth={1} />
+        </div>
+        <a
+          href={adminUrl} 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="flex"
+        >
+          <span>Admin</span>
+          <ArrowUpRight size={20} strokeWidth={1} />
+        </a>
       </div>
     </div>
   );
