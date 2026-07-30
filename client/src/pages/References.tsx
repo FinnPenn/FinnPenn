@@ -5,6 +5,7 @@ import { useParams, Link } from 'react-router-dom';
 import type { Reference, StrapiResponse } from '../types/strapi';
 import { ArrowLeft } from 'lucide-react';
 import { Button } from '@base-ui/react';
+import MenuButton from '@/components/ui/menu-button';
 
 const STRAPI_URL = import.meta.env.VITE_STRAPI_URL || 'http://localhost:1337';
 
@@ -109,10 +110,7 @@ export function ReferencesPage() {
     onClick={() => setActiveFullImage(null)}
     className="absolute right-16 top-16 z-50 flex cursor-pointer items-center justify-center size-25 hover:bg-transparent!"
   >
-    <div>
-      <div className="h-2.5 w-11 bg-foreground transform rotate-45 translate-y-1.25"></div>
-      <div className="h-2.5 w-11 bg-foreground transform -rotate-45 -translate-y-1.25"></div>
-    </div>
+    <MenuButton className={''} isClosed={true} />
   </Button>
 
   {/* Lightbox Body */}

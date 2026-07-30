@@ -11,6 +11,7 @@ import {
 
 import { Avatar, AvatarGroup, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Button } from "@/components/ui/button"
+import MenuButton from "@/components/ui/menu-button"
 
 const Menu = () => {
     const [navExpanded, setNavExpanded] = useState<boolean>(false);
@@ -20,9 +21,8 @@ const Menu = () => {
     }
   return (
     <Drawer swipeDirection="right">
-            <DrawerTrigger className={'absolute right-16 top-16 z-50 size-25 flex flex-col items-center justify-center gap-2 cursor-pointer'} render={<Button className={'hover:bg-transparent!'} variant="ghost" />}>
-                <div className="h-2.5 w-11 bg-foreground "></div>
-                <div className="h-2.5 w-11 bg-foreground "></div>
+            <DrawerTrigger render={<Button className={'hover:bg-transparent!'} variant="ghost" />}>
+                <MenuButton className={'absolute right-16 top-16 z-50 size-25 flex flex-col items-center justify-center gap-2 cursor-pointer'} isClosed={false} />
             </DrawerTrigger>
             <DrawerContent className={'w-1/4 rounded-none! bg-card-foreground p-16'}>
                 <DrawerHeader>
@@ -38,10 +38,7 @@ const Menu = () => {
                             </Avatar>
                         </AvatarGroup>
                         <DrawerClose className={'absolute right-16 top-16 cursor-pointer size-25'} render={<Button className={'hover:bg-transparent!'} variant="ghost" />}>
-                            <div>
-                                <div className="h-2.5 w-11 bg-foreground transform rotate-45 translate-y-1.25"></div>
-                                <div className="h-2.5 w-11 bg-foreground transform -rotate-45 -translate-y-1.25"></div>
-                            </div>
+                            <MenuButton className={''} isClosed={true} />
                         </DrawerClose>
                     </div>
                     
@@ -57,7 +54,7 @@ const Menu = () => {
                             <Link className='w-fit font-heading text-[50px] uppercase hover:-rotate-4 hover:-translate-y-1.25 hover:bg-primary px-3 pt-4 transition-transform text-foreground' to="/frontend">Frontend</Link>
                             <Link className='w-fit font-heading text-[50px] uppercase hover:-rotate-4 hover:-translate-y-1.25 hover:bg-primary px-3 pt-4 transition-transform text-foreground' to="/stories">Stories</Link>
                         </div>
-                        <Link className='w-fit font-heading text-[96px] uppercase transform hover:rotate-4 hover:translate-y-1.25 hover:bg-primary px-3 pt-4 leading-20 transition-transform text-foreground' to="#projects">Projects</Link>
+                        <Link className='w-fit font-heading text-[96px] uppercase transform hover:rotate-4 hover:translate-y-1.25 hover:bg-primary px-3 pt-4 leading-20 transition-transform text-foreground' to="/#projects">Projects</Link>
                     </nav>
                 </div>
                 <DrawerFooter className='flex flex-row w-full justify-center gap-7'>
