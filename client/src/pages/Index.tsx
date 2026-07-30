@@ -1,5 +1,4 @@
-import { useState } from 'react'
-
+import React from "react"
 import RadialCarousel from '@/components/radial-carousel'
 import Footer from '@/components/footer'
 import Hero from '@/components/sections/hero'

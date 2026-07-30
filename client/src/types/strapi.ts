@@ -17,6 +17,16 @@ export interface Article {
   publishedAt: string;
 }
 
+export interface Reference {
+  id: number;
+  documentId: string;
+  title: string;
+  description: string;
+  tools: string;
+  screens?: StrapiMedia;
+  publishedAt: string;
+}
+
 export interface StrapiResponse<T> {
   data: T;
   meta: Record<string, unknown>;
